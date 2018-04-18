@@ -1,0 +1,62 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<h1>Courrier Entrant</h1>
+
+<table class=" table table-hover">
+  <thead>
+  <tr class="success">
+    <th>Numero d'ordre</th>
+    <th>Sender</th>
+    <th>Receiver</th>
+    <th>Entry Date</th>
+    <th>File</th>
+    <th>State</th>
+    <th>User</th>
+    <th>Project</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @entry_couriers.each do |courier| %>
+      <tr>
+        <td>
+          <%= courier.reference %>
+        </td>
+        <td>
+          <%= courier.sender %>
+        </td>
+        <td>
+          <%= courier.receiver %>
+        </td>
+        <td>
+          <%= courier.duration %>
+        </td>
+        <td>
+          <%= courier.state %>
+        </td>
+        <td>
+          <%= courier.user.lName %>
+        </td>
+        <td>
+          <%= courier.project.reference %>
+        </td>
+        <td>
+          <%= link_to 'Show', courier %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_courier_path(courier) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', courier, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Courier', new_entry_courier_path, class: 'btn btn-success' %>

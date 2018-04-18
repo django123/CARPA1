@@ -1,0 +1,32 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<p>
+  <strong>Numéro d'ordre:</strong>
+  <%= @release_courier.reference %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @release_courier.destination %>
+</p>
+
+<p>
+  <strong>Date de sortie:</strong>
+  <%= @release_courier.release_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @release_courier.user %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @release_courier.project %>
+</p>
+
+
+<%= link_to 'Edit', edit_release_courier_path(@release_courier) %> |
+<%= link_to 'Back', release_couriers_path %>

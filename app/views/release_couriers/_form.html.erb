@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-success">
+      <div class="panel-heading"></div>
+      <div class="panel-body">
+        <%= simple_form_for @release_courier, html: { multipart: true, class: "custom" } do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :reference %>
+              <%= f.input :release_date%>
+              <%= f.input :destination%>
+              <%= f.association :user %>
+              <%= f.association :project %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, class: 'btn btn-success' %>
+            </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
